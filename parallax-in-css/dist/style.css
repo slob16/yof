@@ -1,0 +1,171 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:600';
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  -webkit-transform-style: preserve-3d;
+  -webkit-perspective: 1px;  
+  -moz-transform-style: preserve-3d;
+  -moz-perspective: 1px;
+  transform-style: preserve-3d;
+  perspective: 1px;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+img {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+.prlx {
+  display: block;
+  position: relative;
+  height: 120vh;
+  width: 100%;
+  margin: -10vh 0;
+  padding: 20vmin 10vw;
+  -webkit-transform-style: inherit;
+  -moz-transform-style: inherit;
+  transform-style: inherit;
+  box-sizing: border-box;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+}
+
+.prlx:nth-of-type(even) {
+  height: 140vh;
+}
+
+.end,
+.title {
+  -ms-transform: translateZ(0.0px);
+  -webkit-transform: translateZ(0.0px);
+  -moz-transform: translateZ(0.0px);
+  transform: translateZ(0.0px);
+  z-index: 1;
+  background: rgb(2, 56, 56);
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 118, 122, 1) 0%, rgba(1, 91, 94, 1) 43%, rgba(2, 56, 56, 1) 100%);
+  background: radial-gradient(ellipse at center, rgba(0, 118, 122, 1) 0%, rgba(1, 91, 94, 1) 43%, rgba(2, 56, 56, 1) 100%);
+}
+
+h1 {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1em;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 10vw;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 span {
+  display: inline-block;
+  font-size: 15px;
+}
+.words-r,
+.words-l {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: 'Open Sans', sans-serif;
+  padding: 4%;
+  max-width: 60%;
+  background: rgba(232,232,232,.65);
+}
+.words-l {
+  left: 5%;
+}
+.words-r {
+  right: 5%;
+}
+
+h2 {
+  margin: 10px 0;
+  font-size: 2.5em;
+}
+p {
+  line-height: 1.5em;
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+#boat {
+  height: 50vmin;
+  width: auto;
+  left: 57%;
+  top: 50%;
+  border: 6px solid rgba(230,230,230,.7);
+  -ms-transform: translateX(-1vw) translateY(-25vh) translateZ(0.5px) scale(0.5) rotate(5deg);
+  -webkit-transform: translateX(-1vw) translateY(-25vh) translateZ(0.5px) scale(0.5) rotate(5deg);
+  -moz-transform: translateX(-1vw) translateY(-25vh) translateZ(0.5px) scale(0.5) rotate(5deg);
+  transform: translateX(-1vw) translateY(-25vh) translateZ(0.5px) scale(0.5) rotate(5deg);
+}
+#pic-1 {
+  height: 50vmin;
+  width: auto;
+  left: 60%;
+  top: 50%;
+  -ms-transform: translateX(1vw) translateY(-25vh) translateZ(0.5px) scale(0.5) rotate(-10deg);
+  -webkit-transform: translateX(1vw) translateY(-25vh) translateZ(0.5px) scale(0.5) rotate(-10deg);
+  -moz-transform: translateX(1vw) translateY(-25vh) translateZ(0.5px) scale(0.5) rotate(-10deg);
+  transform: translateX(1vw) translateY(-25vh) translateZ(0.5px) scale(0.5) rotate(-10deg);
+}
+
+
+
+.cnt:nth-of-type(odd) {
+  -ms-transform: translateZ(0.0px);
+  -webkit-transform: translateZ(0.0px);
+  -moz-transform: translateZ(0.0px);
+  transform: translateZ(0.0px);
+  padding: 15vh 10vw;
+  z-index: 1;
+  height: 120vh;
+  background: #004a4d;
+}
+
+.cnt:nth-of-type(even):before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -ms-transform: translateZ(-0.5px) scale(1.6);
+  -webkit-transform: translateZ(-0.5px) scale(1.6);
+  -moz-transform: translateZ(-0.5px) scale(1.6);
+  transform: translateZ(-0.5px) scale(1.6);
+}
+
+.cnt:nth-of-type(2):before {
+  background-image: url(http://i.imgur.com/8JXJkoj.jpg);
+}
+
+.cnt:nth-of-type(4):before {
+  background-image: url(http://i.imgur.com/givdV1X.jpg);
+}

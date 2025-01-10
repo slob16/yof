@@ -1,0 +1,42 @@
+/* Add this shadow in tailwind.config.js */
+      .neumorphism-shadow {
+        box-shadow: -4px -4px 10px rgb(255, 255, 255), 4px 4px 10px rgba(0, 0, 0, 0.219);
+      }
+      /* Rotate chevron in collapsing */
+      [data-bs-toggle='collapse'][aria-expanded='true'] span:nth-child(3) svg {
+        transform: rotate(-90deg);
+      }
+
+      /* For bootstrap collapse plugin */
+      .fade {
+        transition: opacity 0.15s linear;
+      }
+      .fade:not(.show) {
+        opacity: 0;
+      }
+      .collapse:not(.show) {
+        display: none;
+      }
+      .collapsing {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.35s ease;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .collapsing {
+          transition: none;
+        }
+        .fade {
+          transition: none;
+        }
+      }
+/* fixed github link. this stuff also should be applied throw config file  */
+      .github-link:hover {
+        box-shadow: inset -4px -4px 10px rgb(255, 255, 255), inset 4px 4px 10px rgba(0, 0, 0, 0.219);
+      }
+      .github-link:hover > svg,
+      .github-link:focus > svg {
+        transform: scale(.95)
+      }
+
+/* TODO: CHANGE SCROLLBAR STYLE */

@@ -1,0 +1,229 @@
+/* Colors */
+$black: #111;
+$phone-background: #171717;
+$white: #ecf0f3;
+$dark-pink: #de1a66;
+$light-pink: #f291b7;
+$light-grey: #808080;
+$light-blue: #4682b4;
+$dark-mode-white: rgba(167, 167, 167, 0.15);
+$dark-mode-black: rgba(0, 0, 0, 0.76);
+$light-mode-white: rgba(255, 255, 255, 0.75);
+$light-mode-black: rgba(0, 0, 0, 0.15);
+
+/* Dimensions */
+$phone-width: 275px;
+$phone-height: 470px;
+
+/* Durations */
+$transition-duration: 0.5s;
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: $black;
+  transition: all $transition-duration;
+  &.light-mode {
+    background-color: $white;
+  }
+}
+%center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%dark-mode-inner-shadow {
+  box-shadow: inset 5px 5px 5px 0px $dark-mode-black,
+    inset -2px -2px 4px 0px $dark-mode-white;
+}
+%dark-mode-drop-shadow {
+  box-shadow: 10px 10px 10px 0px $dark-mode-black,
+    -2px -2px 10px 0px $dark-mode-white;
+}
+%light-mode-inner-shadow {
+  box-shadow: inset 5px 5px 5px 0px $light-mode-black,
+    inset -2px -2px 2px 0px $light-mode-white;
+}
+%light-mode-drop-shadow {
+  box-shadow: 10px 10px 10px 0px $light-mode-black,
+    -5px -5px 5px 0px $light-mode-white;
+}
+
+/* Specific Styles */
+.container {
+  @extend %center;
+  height: 100vh;
+}
+.mode-switch {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  outline: none;
+  ion-icon {
+    font-size: 30px;
+    color: $light-grey;
+    animation: rotateSwitch 2s linear infinite;
+  }
+  #dark-mode-switch {
+    display: none;
+  }
+}
+.phone-wrapper {
+  position: relative;
+  width: $phone-width;
+  height: $phone-height;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all $transition-duration;
+  @extend %dark-mode-drop-shadow;
+  &.light-mode {
+    @extend %light-mode-drop-shadow;
+  }
+}
+.shot {
+  margin: 20px;
+  &:first-child {
+    margin-top: -90px;
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all $transition-duration;
+    @extend %dark-mode-inner-shadow;
+    &.light-mode {
+      @extend %light-mode-inner-shadow;
+    }
+  }
+  .shot-details {
+    margin-left: 12px;
+    .title {
+      color: $dark-pink;
+      font-size: 12px;
+    }
+    .description {
+      font-size: 11px;
+      color: $light-grey;
+    }
+    .name {
+      color: $light-blue;
+    }
+  }
+  .shot-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 140px;
+    border-radius: 20px;
+    margin: 15px 0 10px;
+    padding: 30px;
+    transition: all $transition-duration;
+    @extend %dark-mode-inner-shadow;
+    &.light-mode {
+      @extend %light-mode-inner-shadow;
+    }
+    .shadow-demo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      p {
+        margin-left: 15px;
+        color: $light-grey;
+        font-size: 10px;
+      }
+    }
+    %shadow-demo-dimensions {
+      width: 30px;
+      height: 40px;
+      border-radius: 40px;
+    }
+    .inner-shadow {
+      @extend %shadow-demo-dimensions;
+      @extend %dark-mode-inner-shadow;
+      transition: all $transition-duration;
+      &.light-mode {
+        @extend %light-mode-inner-shadow;
+      }
+    }
+    .drop-shadow {
+      @extend %shadow-demo-dimensions;
+      @extend %dark-mode-drop-shadow;
+      transition: all $transition-duration;
+      &.light-mode {
+        @extend %light-mode-drop-shadow;
+      }
+    }
+  }
+  .button-wrapper {
+    display: flex;
+    ion-icon {
+      margin-right: 20px;
+      font-size: 16px;
+      color: $light-grey;
+      cursor: pointer;
+      outline: none;
+      &:first-child {
+        color: $dark-pink;
+      }
+    }
+  }
+}
+.menu-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  width: 100%;
+  height: 75px;
+  padding: 15px;
+  border-radius: 20px;
+  transition: all $transition-duration;
+  @extend %dark-mode-drop-shadow;
+  &.light-mode {
+    @extend %light-mode-drop-shadow;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 40px;
+    color: $light-pink;
+    &:first-child {
+      @extend %dark-mode-inner-shadow;
+      color: $dark-pink;
+      transition: all $transition-duration;
+    }
+    &.light-mode {
+      @extend %light-mode-inner-shadow;
+    }
+    ion-icon {
+      font-size: 14px;
+      cursor: pointer;
+      outline: none;
+    }
+    span {
+      margin-left: 5px;
+      font-size: 12px;
+    }
+  }
+}
+
+@keyframes rotateSwitch {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

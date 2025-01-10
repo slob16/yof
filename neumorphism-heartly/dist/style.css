@@ -1,0 +1,69 @@
+* body #btn .light:after, * body #btn .dark:after, * body #btn .light:before, * body #btn .dark:before {
+  background: inherit;
+}
+
+* body #btn .light:before, * body #btn .dark:before {
+  width: 40px;
+  height: 40px;
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-20px, 0);
+}
+
+* body #btn .light:after, * body #btn .dark:after {
+  width: 40px;
+  height: 40px;
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(0, -20px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+* body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #101214;
+}
+* body #btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  padding-top: 10px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px #070911, -3px -3px 3px #22262a;
+}
+* body #btn:hover {
+  cursor: pointer;
+  box-shadow: inset 3px 3px 15px #070911, inset -2px -2px 3px #22262a;
+}
+* body #btn:hover #heart {
+  transform: scale(0.9) rotate(45deg);
+}
+* body #btn:active {
+  box-shadow: inset 3px 3px 20px #070911, inset -2px -2px 5px #22262a, inset 0 0 0 3px #FF0000;
+}
+* body #btn:active #heart {
+  transform: scale(0.8) rotate(45deg);
+}
+* body #btn #heart {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transform: rotate(45deg);
+  border-bottom-right-radius: 8px;
+}
+* body #btn .dark {
+  background: #22262a;
+}
+* body #btn .light {
+  background: #FF0000;
+}

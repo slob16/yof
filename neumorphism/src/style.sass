@@ -1,0 +1,63 @@
+$dark: #20222d
+$light: #cfcebc
+$shadow-light: rgba(255,255,255,0.05)
+$shadow-dark: rgba(0,0,0,0.2)
+
+body, html
+  width: 100%
+  height: 100%
+  margin: 0
+  overflow: hidden
+
+.main
+  display: flex
+  flex-direction: row
+  width: 100%
+  height: 100%
+  &>div
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    flex: 1
+    height: 100%
+  
+button
+  border: none
+  width: 250px
+  height: 250px
+  border-radius: 50%
+  
+input
+  margin: 20px
+  padding: 0 1rem
+  border: none
+  height: 50px
+  line-height: 50px
+  width: 20rem
+  border-radius: 25px
+  font-size: 2rem
+  
+.dark
+  background-color: $dark
+  &>button
+    background-color: lighten($dark, 2%)
+  &>input
+    color: $light
+    background-color: darken($dark, 2%)
+
+.light
+  background-color: $light
+  &>button
+    background-color: lighten($light, 5%)
+  &>input
+    color: $dark
+    background-color: darken($light, 5%)
+    
+// Neumorphism proper
+.neu
+    &.raised
+      box-shadow: -10px -10px 20px 0px $shadow-light, 10px 10px 20px 0px $shadow-dark
+    
+    &.sunken
+      box-shadow: -5px -5px 20px 0px $shadow-light inset, 5px 5px 20px 0px $shadow-dark inset

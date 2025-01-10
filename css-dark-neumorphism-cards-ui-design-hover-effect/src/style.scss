@@ -1,0 +1,147 @@
+/* Vars */
+$card-shadow:inset 5px 5px 5px rgba(0, 0, 0, .2),
+  inset -5px -5px 15px rgba(255, 255, 255, .1),
+  5px 5px 15px rgba(0, 0, 0, .3),
+  -5px -5px 15px rgba(255, 255, 255, .1);
+
+$box-bg:#2a2b2f;
+$box-border:2px solid #1a1f23;
+$box-shadow:0 20px 50px rgba(0, 0, 0, .5);
+$hovered-box-shadow:0 40px 70px rgba(0, 0, 0, .5);
+$content-color:#fff;
+$a1-bg:#2196f3;
+$a2-bg:#e91e63;
+$a3-bg:#97dc47;
+
+/* Mixins */
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@mixin set-position($t, $r, $b, $l) {
+  position: absolute;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+}
+
+/* Global Style */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  min-height: 100vh;
+  background-color: #232427;
+  @include flex-center();
+}
+
+/* Container */
+.container {
+  width: 1200px;
+  height: 100%;
+  padding: 40px 0;
+  @include flex-center();
+}
+
+/* Cards */
+.card {
+  width: 320px;
+  height: 440px;
+  border-radius: 15px;
+  margin: 30px;
+  box-shadow: $card-shadow;
+  position: relative;
+  cursor: pointer;
+
+  .box {
+    background-color: $box-bg;
+    border: $box-border;
+    box-shadow: $box-shadow;
+    border-radius: 15px;
+    transition: .5s;
+    @include set-position(20px, 20px, 20px, 20px);
+    @include flex-center();
+    text-align: center;
+    overflow: hidden;
+
+    .content {
+      color: $content-color;
+      opacity: .4;
+      transition: .5s;
+
+      h2 {
+        position: absolute;
+        top: -15px;
+        right: 10px;
+        font-size: 8em;
+        color: rgba(255, 255, 255, .05);
+      }
+
+      h3 {
+        font-size: 2rem;
+        z-index: 1;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.9;
+        z-index: 1;
+      }
+
+      a {
+        color: $content-color;
+        text-decoration: none;
+        padding: 8px 20px;
+        font-size: 1.1rem;
+        display: inline-block;
+        margin-top: 15px;
+        border-radius: 15px;
+      }
+    }
+
+    &::before {
+      content: '';
+      @include set-position(0, 0, 0, 50%);
+      background-color: rgba(255, 255, 255, .03);
+      pointer-events: none;
+    }
+  }
+
+  &:hover {
+    .box {
+      transform: translateY(-50px);
+      box-shadow: $hovered-box-shadow;
+
+      .content {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:nth-child(1) {
+    .box .content a {
+      background-color: $a1-bg;
+    }
+  }
+
+  &:nth-child(2) {
+    .box .content a {
+      background-color: $a2-bg;
+    }
+  }
+
+  &:nth-child(3) {
+    .box .content a {
+      background-color: $a3-bg;
+    }
+  }
+}

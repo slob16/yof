@@ -1,0 +1,115 @@
+/* Vars */
+/* Mixins */
+/* Global Style */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  min-height: 100vh;
+  background-color: #232427;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Container */
+.container {
+  width: 1200px;
+  height: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Cards */
+.card {
+  width: 320px;
+  height: 440px;
+  border-radius: 15px;
+  margin: 30px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2), inset -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  position: relative;
+  cursor: pointer;
+}
+.card .box {
+  background-color: #2a2b2f;
+  border: 2px solid #1a1f23;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  transition: 0.5s;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  overflow: hidden;
+}
+.card .box .content {
+  color: #fff;
+  opacity: 0.4;
+  transition: 0.5s;
+}
+.card .box .content h2 {
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  font-size: 8em;
+  color: rgba(255, 255, 255, 0.05);
+}
+.card .box .content h3 {
+  font-size: 2rem;
+  z-index: 1;
+}
+.card .box .content p {
+  font-size: 1rem;
+  line-height: 1.9;
+  z-index: 1;
+}
+.card .box .content a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 20px;
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-top: 15px;
+  border-radius: 15px;
+}
+.card .box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+.card:hover .box {
+  transform: translateY(-50px);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+}
+.card:hover .box .content {
+  opacity: 1;
+}
+.card:nth-child(1) .box .content a {
+  background-color: #2196f3;
+}
+.card:nth-child(2) .box .content a {
+  background-color: #e91e63;
+}
+.card:nth-child(3) .box .content a {
+  background-color: #97dc47;
+}

@@ -1,0 +1,64 @@
+@mixin basics
+  width: 40px
+  height: 40px
+@mixin pseudo-basics
+  content: ""
+  position: absolute
+  border-radius: 50%
+@mixin flexy
+  display: flex
+  justify-content: center
+  align-items: center
+%inherit
+  background: inherit
+%bef
+  @include basics
+  @include pseudo-basics
+  @extend %inherit
+  transform: translate(-20px,0)
+%aft
+  @include basics
+  @include pseudo-basics
+  @extend %inherit
+  transform: translate(0,-20px)
+  
+*
+  box-sizing: border-box
+  margin: 0
+  body
+    height: 100vh
+    @include flexy
+    background: #101214
+    #btn
+      @include flexy
+      width: 100px
+      height: 100px
+      padding-top: 10px
+      border-radius: 50%
+      box-shadow: 3px 3px 3px #070911, -3px -3px 3px #22262a
+      &:hover
+        #heart
+          transform: scale(0.9) rotate(45deg)
+        cursor: pointer
+        box-shadow: inset 3px 3px 15px #070911, inset -2px -2px 3px #22262a
+      &:active
+        #heart
+          transform: scale(0.8) rotate(45deg)
+        box-shadow: inset 3px 3px 20px #070911, inset -2px -2px 5px #22262a, inset 0 0 0 3px #FF0000        
+      #heart
+        @include basics
+        position: relative
+        transform: rotate(45deg)
+        border-bottom-right-radius: 8px
+      .dark
+        background: #22262a
+        &:before
+          @extend %bef
+        &:after
+          @extend %aft
+      .light
+        background: #FF0000
+        &:before
+          @extend %bef
+        &:after
+          @extend %aft

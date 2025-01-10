@@ -1,0 +1,436 @@
+/* Foreground */
+.foreground-container {
+  position: absolute;
+  width: 500px;
+  height: 100px;
+  top: 400px;
+  left: 0;
+  background: linear-gradient(#6f9323, #a5d645);
+}
+
+/* Hot Air Balloon Animation */
+.hot-air-balloon {
+  position: absolute;
+  top: 230px;
+  left: 255px;
+  transform: scale(0.5);
+  animation: balloon 12s ease-in infinite;
+}
+
+@keyframes balloon {
+  from {
+    top: 230px;
+    transform: scale(0.5);
+  }
+  35% {
+    top: 20px;
+    left: 120px;
+    transform: scale(0.5);
+  }
+  40% {
+    top: 30px;
+    left: 120px;
+    transform: scale(0.5);
+  }
+  50% {
+    top: 20px;
+    left: 120px;
+    transform: scale(0.5);
+  }
+  60% {
+    top: 30px;
+    left: 120px;
+    transform: scale(0.5);
+  }
+  65% {
+    top: 20px;
+    left: 120px;
+    transform: scale(0.5);
+  }
+  90% {
+    left: -400px;
+    transform: scale(0.9);
+  }
+  to {
+    top: -100px;
+    left: -500px;
+    transform: scale(1);
+  }
+}
+
+/* Hot Air Balloon Components */
+/* Envelope */
+.envelope {
+  position: absolute;
+  top: 5px;
+  left: 85px;
+  height: 325px;
+  width: 325px;
+  background: linear-gradient(#c8444f, #f36464);
+  border-radius: 150%;
+  border-bottom-left-radius: 425%;
+  border-bottom-right-radius: 425%;
+  border-top-left-radius: 425%;
+  border-top-right-radius: 150%;
+  transform: rotate(135deg);
+  filter: drop-shadow(#9e343c 1px -3px 4px);
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 45px;
+  height: 349px;
+  width: 252px;
+  background: linear-gradient(#ffffff, #e1e0e6);
+  border-bottom-left-radius: 80%;
+  border-bottom-right-radius: 80%;
+  border-top-left-radius: 80%;
+  border-top-right-radius: 80%;
+  transform: rotate(-135deg);
+}
+
+.envelope::after {
+  content: "";
+  position: absolute;
+  top: -21px;
+  left: 112px;
+  height: 350px;
+  width: 120px;
+  background: linear-gradient(300deg, #c8444f, #ec5c5c);
+  border-bottom-left-radius: 80%;
+  border-bottom-right-radius: 80%;
+  border-top-left-radius: 80%;
+  border-top-right-radius: 80%;
+  transform: rotate(-135deg);
+}
+
+/* Skirt */
+.skirt {
+  position: absolute;
+  top: 345px;
+  left: 196px;
+  height: 42px;
+  width: 104px;
+  background: radial-gradient(circle at top left, #286179, #264154);
+  clip-path: polygon(0 0, 100% 0, 87% 100%, 13% 100%);
+}
+
+/* Rigging */
+.rigging {
+  position: absolute;
+  top: 387px;
+  left: 232px;
+  height: 39px;
+  width: 5px;
+  background: black;
+  box-shadow: 30px 0 0 0 black;
+}
+
+.rigging::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -17px;
+  height: 45px;
+  width: 5px;
+  background: black;
+  transform: rotate(-13deg);
+}
+
+.rigging::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 44px;
+  height: 46px;
+  width: 5px;
+  background: black;
+  transform: rotate(13deg);
+}
+
+/* Basket */
+.basket {
+  position: absolute;
+  top: 426px;
+  left: 220px;
+  height: 63px;
+  width: 59px;
+  background: radial-gradient(circle at top left, #fddf97, #e0be84);
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%;
+  /* filter: drop-shadow(#a68347 1px 2px 2px); */
+  /* Remove drop shadow */
+}
+
+.basket::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  height: 16px;
+  width: 70px;
+  background: radial-gradient(circle at top left, #fddf97, #e0be84);
+  border-radius: 5px 5px;
+  filter: drop-shadow(#a68347 1px 2px 2px);
+}
+
+/* Sandbags */
+.sand-bag-center {
+  position: absolute;
+  top: 446px;
+  left: 239px;
+  height: 21px;
+  width: 21px;
+  background: radial-gradient(at top left, #ec5c5c, #c8444f);
+  filter: drop-shadow(#9e343c 3px 1px 2px);
+  border-top-left-radius: 30%;
+  border-top-right-radius: 150%;
+  border-bottom-right-radius: 150%;
+  border-bottom-left-radius: 150%;
+  transform: rotate(45deg);
+}
+
+.sand-bag-side {
+  position: absolute;
+  top: 441px;
+  left: 211px;
+  height: 28px;
+  width: 21px;
+  background: radial-gradient(circle at top left, #ec5c5c, #c8444f);
+  border-radius: 16px 0px 0px 8px;
+}
+
+.sand-bag-side::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 57px;
+  height: 28px;
+  width: 21px;
+  background: #c8444f;
+  border-radius: 0px 16px 8px 0px;
+}
+
+/* Background */
+.background-container {
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  top: 0px;
+  left: 0px;
+  background: #99dcfb;
+}
+
+/* Mountains */
+.mountains-container {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 150px;
+  left: 0px;
+  background: transparent;
+}
+
+.mountain-1 {
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  top: 20px;
+  left: 0px;
+  background: rgb(202, 248, 196);
+  clip-path: path("M 0,230 S 153,-41 270,14 S 449,-4 522,84 S 726,-33 800,230");
+  animation: mountain-1 35s linear infinite;
+}
+
+@keyframes mountain-1 {
+  from {
+    left: 800px;
+  }
+  to {
+    left: -800px;
+  }
+}
+
+.mountain-2 {
+  position: absolute;
+  width: 800px;
+  height: 200px;
+  top: 50px;
+  left: -20px;
+  background: rgb(165, 214, 69);
+  clip-path: path(
+    "M 0,200 S 31,6 96,23 S 164,-36 242,37 S 314,-13 386,34 S 465,50 800,200"
+  );
+  animation: mountain-2 25s linear infinite;
+}
+
+@keyframes mountain-2 {
+  from {
+    left: 600px;
+  }
+  to {
+    left: -800px;
+  }
+}
+
+.mountain-3 {
+  position: absolute;
+  width: 600px;
+  height: 100px;
+  top: 150px;
+  left: -30px;
+  background: rgb(0, 127, 0);
+  clip-path: path(
+    "M 0,100 S 101,13 125,58 S 205,22 300,60 S 330,12 408,64 S 454,11 600,100"
+  );
+  animation: mountain-3 15s linear infinite;
+}
+@keyframes mountain-3 {
+  from {
+    left: 650px;
+  }
+  to {
+    left: -600px;
+  }
+}
+
+/* Clouds */
+.cloud-1 {
+  position: absolute;
+  width: 150px;
+  height: 30px;
+  top: -5px;
+  left: 450px;
+  background: white;
+  opacity: 0.5;
+  border-radius: 20px;
+  animation: cloud-1 20s ease-in infinite;
+}
+
+.cloud-1::before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  top: 40px;
+  left: 15px;
+  background: white;
+  border-radius: 20px;
+}
+
+@keyframes cloud-1 {
+  from {
+    left: 500px;
+  }
+  to {
+    left: -200px;
+  }
+}
+
+.cloud-2 {
+  position: absolute;
+  width: 140px;
+  height: 30px;
+  top: 120px;
+  left: 0px;
+  background: white;
+  opacity: 0.6;
+  border-radius: 20px;
+  animation: cloud-2 15s ease-out infinite;
+}
+
+.cloud-2::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  top: 0px;
+  left: -45px;
+  background: white;
+  border-radius: 20px;
+}
+
+.cloud-2::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  top: 40px;
+  left: -15px;
+  background: white;
+  border-radius: 20px;
+}
+
+@keyframes cloud-2 {
+  from {
+    left: 500px;
+  }
+  to {
+    left: -200px;
+  }
+}
+
+.cloud-3 {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  top: 240px;
+  left: 0px;
+  background: white;
+  /* opacity: 0.6; */
+  border-radius: 20px;
+  animation: cloud-3 12s linear infinite;
+}
+
+.cloud-3::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  top: 0px;
+  left: 110px;
+  background: white;
+  border-radius: 20px;
+}
+
+@keyframes cloud-3 {
+  from {
+    left: 510px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    left: -150px;
+    opacity: 0;
+  }
+}
+
+/* Body and Container Settings */
+/* Center shapes */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Set background and border color */
+.container {
+  min-width: 500px;
+  height: 500px;
+  border: 5px solid lightgray;
+  background: transparent;
+  position: relative;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}

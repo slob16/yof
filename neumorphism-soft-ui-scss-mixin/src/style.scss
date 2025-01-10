@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+@mixin neumorph($distance, $color) {
+  box-shadow: -#{$distance} -#{$distance} calc(#{$distance} * 2) 0
+      rgba(lighten($color, 10%), 0.43),
+    $distance $distance calc(#{$distance} * 2) 0 rgba(darken($color, 30%), 0.41);
+}
+
+@mixin inset-neumorph($distance, $color) {
+  box-shadow: inset -#{$distance} -#{$distance} calc(#{$distance} * 2) 0
+      rgba(lighten($color, 10%), 0.43),
+    inset $distance $distance calc(#{$distance} * 2) 0
+      rgba(darken($color, 30%), 0.41);
+}
+
+@mixin convex-neumorph($distance, $color) {
+  box-shadow: -#{$distance} -#{$distance} calc(#{$distance} * 2) 0
+      rgba(lighten($color, 10%), 0.43),
+    $distance $distance calc(#{$distance} * 2) 0 rgba(darken($color, 30%), 0.41);
+  background: linear-gradient(145deg, lighten($color, 5%), darken($color, 5%));
+}
+
+@mixin inset-convex-neumorph($distance, $color) {
+  box-shadow: inset -#{$distance} -#{$distance} calc(#{$distance} * 2) 0
+      rgba(lighten($color, 10%), 0.43),
+    inset $distance $distance calc(#{$distance} * 2) 0
+      rgba(darken($color, 30%), 0.41);
+  background: linear-gradient(145deg, darken($color, 5%), lighten($color, 5%));
+}
+
+@mixin concave-neumorph($distance, $color) {
+  box-shadow: -#{$distance} -#{$distance} calc(#{$distance} * 2) 0
+      rgba(lighten($color, 10%), 0.43),
+    $distance $distance calc(#{$distance} * 2) 0 rgba(darken($color, 30%), 0.41);
+  background: linear-gradient(145deg, darken($color, 5%), lighten($color, 5%));
+}
+
+@mixin inset-concave-neumorph($distance, $color) {
+  box-shadow: inset -#{$distance} -#{$distance} calc(#{$distance} * 2) 0
+      rgba(lighten($color, 10%), 0.43),
+    inset $distance $distance calc(#{$distance} * 2) 0
+      rgba(darken($color, 30%), 0.41);
+  background: linear-gradient(145deg, lighten($color, 5%), darken($color, 5%));
+}
+
+@mixin text-neumorph($color, $distance) {
+  color: $color;
+  text-shadow: $distance $distance 10px darken($color, 10%), -1*$distance -1*$distance 10px lighten($color, 10%);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", "sans-serif";
+}
+$bg: #4a678e;
+.back {
+  height: 100vh;
+  width: 100vw;
+  display: inline-flex;
+  flex-direction: row;
+  background: $bg;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .text {
+    width: 100%;
+    margin: 0 1em;
+    @include text-neumorph($bg,5px);
+    font-size: 9vw;
+    text-align:center;
+    font-weight: 900;
+    text-decoration: none
+  }
+  .card {
+    cursor: pointer;
+    $distance: 8px;
+    margin: 15px;
+    display: flex;
+    background: $bg;
+    height: 10vw;
+    width: 10vw;
+    @include neumorph($distance, $bg);
+    border-radius: 25px;
+    &:active {
+      @include inset-neumorph($distance, $bg);
+    }
+    &:first-child {
+      border-radius: 50%;
+    }
+    &:nth-child(2) {
+      border-radius: 5px;
+    }
+    &:nth-child(3) {
+      @include convex-neumorph(5px, $bg);
+      &:active {
+        @include inset-convex-neumorph(5px, $bg);
+      }
+    }
+    &:nth-child(5) {
+      @include concave-neumorph(5px, $bg);
+      &:active {
+        @include inset-concave-neumorph(5px, $bg);
+      }
+    }
+  }
+}
